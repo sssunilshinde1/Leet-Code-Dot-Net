@@ -1,4 +1,4 @@
-1 )Sliding Window: Uses two pointers moving in the same direction to track a sub-segment of data.
+1) Sliding Window: Uses two pointers moving in the same direction to track a sub-segment of data.
 2) Fast and Slow Pointers: Moves two pointers at different speeds to detect cycles or find midpoints.
 3) Prefix Sum: Pre-calculates cumulative totals to allow instant range-sum lookups.
 4) Binary Search: A two-pointer approach that halves the search space at every step.
