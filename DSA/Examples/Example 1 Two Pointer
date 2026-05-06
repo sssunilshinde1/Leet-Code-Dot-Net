@@ -10,3 +10,43 @@ Absolutely! Here are 10 problem statements that would be great for practicing th
 8) Two Strings Anagram: Determine if two strings are anagrams using two pointers to scan both simultaneously.
 9) Rearrange Array by Sign: Given an array with positive and negative numbers, rearrange them so that they alternate (positive, negative, positive, etc.).
 10) Find Peak in Mountain Array: Given an array that first increases then decreases, find the peak element.
+
+1)
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        int[] numbers = { 1, 2, 3, 4, 6 };
+        int target = 6;
+        int[] result = FindPair(numbers, target);
+
+        if (result.Length == 2)
+            Console.WriteLine($"Pair found: {result[0]}, {result[1]}");
+        else
+            Console.WriteLine("No pair found.");
+    }
+
+    public static int[] FindPair(int[] arr, int targetSum)
+    {
+        int left = 0;
+        int right = arr.Length - 1;
+
+        while (left < right)
+        {
+            int currentSum = arr[left] + arr[right];
+
+            if (currentSum == targetSum)
+                return new int[] { arr[left], arr[right] }; // Found the pair
+
+            if (currentSum < targetSum)
+                left++; // Need a larger sum, move left pointer right
+            else
+                right--; // Need a smaller sum, move right pointer left
+        }
+
+        return new int[0]; // No pair exists
+    }
+}
+
