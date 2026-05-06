@@ -1,12 +1,12 @@
-Sliding Window: Uses two pointers moving in the same direction to track a sub-segment of data.
-Fast and Slow Pointers: Moves two pointers at different speeds to detect cycles or find midpoints.
-Prefix Sum: Pre-calculates cumulative totals to allow instant range-sum lookups.
-Binary Search: A two-pointer approach that halves the search space at every step.
-Two Pointers (Multiple Arrays): One pointer per array used to merge or compare sorted datasets.
-Divide and Conquer: Breaks a problem into two halves recursively (like Merge Sort).
-Backtracking: Explores all possible paths and "backtracks" when a path fails.
-Greedy Approach: Makes the best local choice at each step to find a global solution.
-Dynamic Programming: Breaks problems into sub-problems and stores results to avoid re-calculation.
-BFS (Breadth-First Search): Explores a graph or tree level by level using a queue.
-DFS (Depth-First Search): Explores a graph or tree by going as deep as possible before backtracking.
-Monotonic Stack: Uses a stack to keep elements in a specific order (increasing or decreasing).
+1 )Sliding Window: Uses two pointers moving in the same direction to track a sub-segment of data.
+2) Fast and Slow Pointers: Moves two pointers at different speeds to detect cycles or find midpoints.
+3) Prefix Sum: Pre-calculates cumulative totals to allow instant range-sum lookups.
+4) Binary Search: A two-pointer approach that halves the search space at every step.
+5) Two Pointers (Multiple Arrays): One pointer per array used to merge or compare sorted datasets.
+6) Divide and Conquer: Breaks a problem into two halves recursively (like Merge Sort).
+7) Backtracking: Explores all possible paths and "backtracks" when a path fails.
+8) Greedy Approach: Makes the best local choice at each step to find a global solution.
+9) Dynamic Programming: Breaks problems into sub-problems and stores results to avoid re-calculation.
+10) BFS (Breadth-First Search): Explores a graph or tree level by level using a queue.
+11) DFS (Depth-First Search): Explores a graph or tree by going as deep as possible before backtracking.
+12) Monotonic Stack: Uses a stack to keep elements in a specific order (increasing or decreasing).
