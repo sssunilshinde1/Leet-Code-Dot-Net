@@ -11,7 +11,7 @@ Absolutely! Here are 10 problem statements that would be great for practicing th
 9) Rearrange Array by Sign: Given an array with positive and negative numbers, rearrange them so that they alternate (positive, negative, positive, etc.).
 10) Find Peak in Mountain Array: Given an array that first increases then decreases, find the peak element.
 
-1)
+1) Pair with Target Sum: Given a sorted array, find if there is a pair that sums up to a target value.
 using System;
 
 public class Program
@@ -49,4 +49,18 @@ public class Program
         return new int[0]; // No pair exists
     }
 }
+
+OR
+using System.Linq;
+
+public static int[] FindPairLinq(int[] arr, int targetSum)
+{
+    var result = arr
+        .SelectMany((x, i) => arr.Skip(i + 1).Select(y => new { x, y }))
+        .FirstOrDefault(p => p.x + p.y == targetSum);
+
+    return result != null ? new int[] { result.x, result.y } : new int[0];
+}
+
+
 
