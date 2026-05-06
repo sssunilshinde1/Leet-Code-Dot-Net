@@ -62,5 +62,12 @@ public static int[] FindPairLinq(int[] arr, int targetSum)
     return result != null ? new int[] { result.x, result.y } : new int[0];
 }
 
+Add variation to problem
+1. Return Indices instead of ValuesInstead of the numbers themselves, return the positions (indices) of the elements. This is tricky because if you use LINQ or sorting, you must keep track of where the numbers originally were.
+2. Find All Unique PairsInstead of stopping at the first pair, find every pair that sums to the target.The Twist: The array might have duplicates (e.g., [1, 1, 2, 3] target 4). You have to skip used numbers to ensure the output doesn't have the same pair twice.
+3. Find the "Closest" SumIf no pair equals the target exactly, find the pair whose sum is closest to it.The Logic: You still use Two-Pointers, but you keep a variable to track the minDifference found so far.
+4. Triplet Sum (3Sum)Find three numbers that sum to the target.The Logic: You fix one number using a for loop, then use the Two-Pointer technique on the remaining part of the array to find the other two.
+5. Triplets with Smaller SumFind the count of all triplets whose sum is less than a target value.The Logic: When arr[left] + arr[right] < target, it means all elements between left and right will also form a valid pair with arr[left] because the array is sorted.
+6. Subarray Sum (Not Pairs)Find a contiguous range of numbers (like arr[2] through arr[5]) that adds up to the target.The Logic: This shifts from Two-Pointers to a Sliding Window approach.
 
 
