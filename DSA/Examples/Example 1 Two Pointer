@@ -1,0 +1,12 @@
+Absolutely! Here are 10 problem statements that would be great for practicing the two-pointers approach:
+
+1) Pair with Target Sum: Given a sorted array, find if there is a pair that sums up to a target value.
+2) Container With Most Water: Given an array of heights, find two lines that together with the x-axis form a container, and return the max water it can contain.
+3) Triplet Sum Close to Target: Given an array and a target, find three numbers in the array such that their sum is closest to the target.
+4) Remove Duplicates from Sorted Array: Remove duplicates in-place from a sorted array and return the new length.
+5) Valid Palindrome II: Check if a string can be a palindrome after removing at most one character.
+6) Shortest Subarray with Sum at Least K: Find the minimal length of a subarray whose sum is at least K.
+7) Squares of a Sorted Array: Given a sorted array of integers, return the squares of each number, sorted.
+8) Two Strings Anagram: Determine if two strings are anagrams using two pointers to scan both simultaneously.
+9) Rearrange Array by Sign: Given an array with positive and negative numbers, rearrange them so that they alternate (positive, negative, positive, etc.).
+10) Find Peak in Mountain Array: Given an array that first increases then decreases, find the peak element.
