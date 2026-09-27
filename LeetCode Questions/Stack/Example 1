@@ -1,1 +1,100 @@
 
+1190. Reverse Substrings Between Each Pair of Parentheses
+Medium
+Topics
+premium lock icon
+Companies
+Hint
+You are given a string s that consists of lower case English letters and brackets.
+
+Reverse the strings in each pair of matching parentheses, starting from the innermost one.
+
+Your result should not contain any brackets.
+
+ 
+
+Example 1:
+
+Input: s = "(abcd)"
+Output: "dcba"
+Example 2:
+
+Input: s = "(u(love)i)"
+Output: "iloveu"
+Explanation: The substring "love" is reversed first, then the whole string is reversed.
+Example 3:
+
+Input: s = "(ed(et(oc))el)"
+Output: "leetcode"
+Explanation: First, we reverse the substring "oc", then "etco", and finally, the whole string.
+ 
+
+Constraints:
+
+1 <= s.length <= 2000
+s only contains lower case English characters and parentheses.
+It is guaranteed that all parentheses are balanced
+
+/******************************************************************************
+
+                            Online C# Compiler.
+                Code, Compile, Run and Debug C# program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+class HelloWorld {
+  static void Main() {
+          string s = "(ed(et(oc))el)";
+Console.WriteLine($"{s}");
+        string result = ReverseParentheses(s);
+
+        Console.WriteLine(result);
+    Console.WriteLine("Hello World");
+  }
+      static string ReverseParentheses(string s)
+    {
+        Stack<char> stack = new Stack<char>();
+
+        foreach (char ch in s)
+        {
+            if (ch != ')')
+            {
+                stack.Push(ch);
+            }
+            else
+            {
+                // Take characters until '('
+                List<char> temp = new List<char>();
+
+                while (stack.Peek() != '(')
+                {
+                    temp.Add(stack.Pop());
+                }
+
+                // Remove '('
+                stack.Pop();
+
+                // Push characters back
+                foreach (char c in temp)
+                {
+                    stack.Push(c);
+                }
+            }
+        }
+
+        // Build final result
+        char[] result = new char[stack.Count];
+
+        for (int i = result.Length - 1; i >= 0; i--)
+        {
+            result[i] = stack.Pop();
+        }
+
+        return new string(result);
+    }
+}
