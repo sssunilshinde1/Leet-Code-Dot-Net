@@ -1,0 +1,91 @@
+Longest Palindromic Substring
+
+Given a string s, return the longest palindromic substring in s.
+
+Example 1:
+
+Input: s = "babad"
+Output: "bab"
+Explanation: "aba" is also a valid answer.
+Example 2:
+
+Input: s = "cbbd"
+Output: "bb"
+ 
+
+Constraints:
+
+1 <= s.length <= 1000
+s consist of only digits and English letters.
+
+
+public class Solution {
+   
+    public string LongestPalindrome(string s) {
+    
+        string palindrome = string.Empty;
+        
+        int longest = 0;
+      
+        for(int i=0; i < s.Length; i++)
+        {
+            string oddPalindrome = strgExpandAroudnCenter(s, i, i); 
+            string evenPalindrome = strgExpandAroudnCenter(s, i, i + 1);
+            if(oddPalindrome.Length > evenPalindrome.Length
+                    && oddPalindrome.Length > longest
+            )
+            {
+                longest = oddPalindrome.Length;
+                palindrome = oddPalindrome;
+            }
+            else if( evenPalindrome.Length > oddPalindrome.Length
+                    && evenPalindrome.Length > longest
+            )
+            {
+                longest = evenPalindrome.Length;
+                palindrome = evenPalindrome;
+            } 
+            else if( evenPalindrome.Length == oddPalindrome.Length && evenPalindrome.Length > longest)
+            {
+                longest = evenPalindrome.Length;
+                palindrome = evenPalindrome;
+            }         
+        }      
+     
+        return palindrome;
+    }
+
+    public  string strgExpandAroudnCenter(string input, int left, int right )
+    {
+        string temp =string.Empty;
+
+        int lft = left;
+        int rght = right;
+
+        
+        while( lft >=0 && rght < input.Length
+        )
+        {
+          if( input[lft] == input[rght] )
+          {
+            if(lft == rght){
+                temp += input[lft];
+            }
+            else
+            {
+                temp =  input[lft] + temp;
+                temp = temp + input[rght];
+            }
+          }
+          else
+          {
+            break;
+          }
+          lft -= 1;
+          rght += 1;
+        }
+
+        return temp;
+    }
+
+}
