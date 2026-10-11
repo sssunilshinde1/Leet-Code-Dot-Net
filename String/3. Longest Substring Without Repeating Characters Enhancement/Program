@@ -21,7 +21,7 @@ namespace ConsoleApp6Test
 
                     set.Add(s[right]);
 
-                    int currentLength = right - left + 1;
+                    int currentLength = right - left + 1;  // SLiding window variable size
 
                     if (currentLength > longest)
                     {
